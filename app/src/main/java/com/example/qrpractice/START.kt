@@ -12,6 +12,8 @@ import com.android.volley.VolleyError
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.qrpractice.R
+import com.google.gson.Gson
+import org.json.JSONArray
 import java.text.DateFormat
 import java.util.*
 
@@ -57,9 +59,15 @@ btn.setOnClickListener{
 
         // Request a string response from the provided URL.
         val stringRequest = StringRequest(Request.Method.GET, url,
-            Response.Listener<String> { response ->
+            Response.Listener<JSONArray> {
+                    val gson = Gson()
+
+                    response->
+                textView.text=
+
+                  /*  response ->
                 // Display the first 500 characters of the response string.
-                textView.text = "Response is: ${response.substring(0, 1)}"
+                textView.text = "Response is: ${response.substring(0, 1)}"*/
             },
             Response.ErrorListener { textView.text = "That didn't work!" })
 
